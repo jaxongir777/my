@@ -1,0 +1,623 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 80px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.small-title {
+  color: #38bdf8;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: 70px;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: #38bdf8;
+}
+
+.description {
+  max-width: 600px;
+  color: #cbd5e1;
+  font-size: 20px;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  border: none;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  border: 1px solid #38bdf8;
+  background: transparent;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.hero-card {
+  width: 320px;
+  padding: 40px 25px;
+  text-align: center;
+  border: 1px solid #334155;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #38bdf8;
+  color: #0f172a;
+  font-size: 55px;
+  font-weight: 800;
+}
+
+.hero-card h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.hero-card p {
+  color: #94a3b8;
+  margin-bottom: 25px;
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skills span {
+  padding: 7px 12px;
+  border-radius: 8px;
+  background: #1e293b;
+  color: #38bdf8;
+  font-size: 14px;
+}
+
+/* Telefon uchun */
+@media (max-width: 800px) {
+  .hero {
+    padding: 50px 25px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .description {
+    font-size: 17px;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+/* =========================
+   TELEFON POPUP
+========================= */
+
+.phone-popup {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 9999;
+
+  animation: phonePopup 0.4s ease;
+}
+
+.phone-box {
+  position: relative;
+
+  width: 320px;
+
+  padding: 25px;
+
+  text-align: center;
+
+  background: #0f172a;
+
+  border: 1px solid #38bdf8;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(56, 189, 248, 0.15);
+}
+
+.phone-icon {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 35px;
+}
+
+.phone-box h3 {
+  margin-bottom: 10px;
+
+  color: white;
+
+  font-size: 18px;
+}
+
+.phone-box p {
+  margin-bottom: 20px;
+
+  color: #38bdf8;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+/* Qo‘ng‘iroq tugmasi */
+
+.call-button {
+  display: inline-block;
+
+  padding: 11px 20px;
+
+  background: #38bdf8;
+
+  color: #0f172a;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.call-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(56, 189, 248, 0.3);
+}
+
+/* Yopish tugmasi */
+
+.close-phone {
+  position: absolute;
+
+  top: 10px;
+  right: 12px;
+
+  width: 30px;
+  height: 30px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #94a3b8;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.close-phone:hover {
+  color: white;
+
+  transform: rotate(90deg);
+}
+
+/* Popup animatsiyasi */
+
+@keyframes phonePopup {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Telefon */
+
+@media (max-width: 500px) {
+  .phone-popup {
+    width: calc(100% - 30px);
+
+    top: 15px;
+  }
+
+  .phone-box {
+    width: 100%;
+
+    padding: 22px;
+  }
+}
+
+/* Desktop */
+/* asosiy CSS */
+
+
+/* Tablet */
+@media (max-width: 900px) {
+  /* Header tablet uchun */
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+  /* Header telefon uchun */
+}
+
+
+/* Kichik telefon */
+@media (max-width: 400px) {
+  /* Header kichik telefon uchun */
+}
+
+
+/* =========================
+   SKILLS - TEXNOLOGIYALAR
+========================= */
+
+.skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.skills span {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  padding: 9px 16px;
+
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 10px;
+
+  background: rgba(30, 41, 59, 0.9);
+  color: #38bdf8;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  cursor: default;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Orqa tomondan rangli effekt */
+
+.skills span::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    #38bdf8,
+    #818cf8
+  );
+
+  transform: translateY(105%);
+  transition: transform 0.35s ease;
+
+  z-index: -1;
+}
+
+/* Pastki dekorativ chiziq */
+
+.skills span::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: #ffffff;
+
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+/* Hover effekti */
+
+.skills span:hover {
+  color: #0f172a;
+  border-color: #38bdf8;
+
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 8px 20px rgba(56, 189, 248, 0.2),
+    0 0 12px rgba(56, 189, 248, 0.1);
+}
+
+.skills span:hover::before {
+  transform: translateY(0);
+}
+
+.skills span:hover::after {
+  width: 65%;
+}
+
+/* Har bir texnologiya uchun alohida animatsiya */
+
+.skills span:nth-child(1) {
+  animation: skillAppear 0.5s ease 0.1s both;
+}
+
+.skills span:nth-child(2) {
+  animation: skillAppear 0.5s ease 0.2s both;
+}
+
+.skills span:nth-child(3) {
+  animation: skillAppear 0.5s ease 0.3s both;
+}
+
+.skills span:nth-child(4) {
+  animation: skillAppear 0.5s ease 0.4s both;
+}
+
+/* Kirib kelish animatsiyasi */
+
+@keyframes skillAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Avatar uchun mos yorug‘lik */
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.hero-card::before {
+  content: "";
+
+  position: absolute;
+  top: -100px;
+  right: -100px;
+
+  width: 180px;
+  height: 180px;
+
+  background: #38bdf8;
+  opacity: 0.08;
+  filter: blur(50px);
+
+  pointer-events: none;
+}
+
+.hero-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.6);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.2),
+    0 0 25px rgba(56, 189, 248, 0.08);
+}
+
+/* Rasm uchun effekt */
+
+.avatar {
+  object-fit: cover;
+  border: 3px solid rgba(56, 189, 248, 0.7);
+
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.15);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.hero-card:hover .avatar {
+  transform: scale(1.05);
+
+  box-shadow:
+    0 0 25px rgba(56, 189, 248, 0.4);
+}
+
+/* Telefonlarda hover effektini moslashtirish */
+
+@media (max-width: 800px) {
+  .skills {
+    gap: 10px;
+  }
+
+  .skills span {
+    padding: 9px 13px;
+  }
+
+  .hero-card:hover {
+    transform: none;
+  }
+}
+
+/* Harakatni kamaytirishni tanlagan foydalanuvchilar */
+
+@media (prefers-reduced-motion: reduce) {
+  .skills span,
+  .skills span::before,
+  .skills span::after,
+  .hero-card,
+  .avatar {
+    animation: none;
+    transition: none;
+  }
+}
+
+
+/* =========================
+   AVATAR LOGO PSEUDO EFFEKT
+========================= */
+
+.hero-card .avatar {
+  position: relative;
+  z-index: 1;
+
+  border: 3px solid #38bdf8;
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  box-shadow:
+    0 0 12px rgba(56, 189, 248, 0.35),
+    0 0 25px rgba(56, 189, 248, 0.15);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Avatar atrofidagi dekorativ halqa */
+
+.hero-card {
+  position: relative;
+}
+
+/* Rasm hover effekti */
+
+.hero-card .avatar:hover {
+  transform: scale(1.07);
+
+  box-shadow:
+    0 0 18px rgba(56, 189, 248, 0.65),
+    0 0 35px rgba(56, 189, 248, 0.3);
+}
+
+/* Avatar uchun tashqi neon halqa */
+
+.hero-card .avatar {
+  outline: 2px solid transparent;
+  outline-offset: 5px;
+}
+
+.hero-card .avatar:hover {
+  outline-color: #38bdf8;
+}
+
+/* Rasm atrofidagi yorug‘lik */
+
+.hero-card .avatar {
+  animation: avatarGlow 3s ease-in-out infinite;
+}
+
+@keyframes avatarGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 12px rgba(56, 189, 248, 0.25),
+      0 0 22px rgba(56, 189, 248, 0.1);
+  }
+
+  50% {
+    box-shadow:
+      0 0 20px rgba(56, 189, 248, 0.55),
+      0 0 35px rgba(56, 189, 248, 0.25);
+  }
+}
+
+/* Harakatni kamaytirish sozlamasi */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-card .avatar {
+    animation: none;
+    transition: none;
+  }
+}
