@@ -324,6 +324,7 @@ button {
 /* Kichik telefon */
 @media (max-width: 400px) {
   /* Header kichik telefon uchun */
+<<<<<<< HEAD
 }
 
 
@@ -621,3 +622,6 @@ button {
     transition: none;
   }
 }
+=======
+}
+>>>>>>> 86c2fb366a3ba843272b844017abbcfd6b38c1f0

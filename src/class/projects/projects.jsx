@@ -41,6 +41,7 @@ export const Projects = () => {
       description: 'Professional kompaniya uchun yaratilgan web sayt.',
       link: 'https://di-z4up.vercel.app/',
       technologies: ['React', 'Tailwind CSS', 'JavaScript']
+<<<<<<< HEAD
     },
 
     {
@@ -65,6 +66,8 @@ export const Projects = () => {
       description: 'Zamonaviy elektromobillar va avtomobillar uchun avtosalon web sayti.',
       link: 'https://lynkco-omega.vercel.app/',
       technologies: ['React', 'CSS', 'JavaScript']
+=======
+>>>>>>> 86c2fb366a3ba843272b844017abbcfd6b38c1f0
     }
   ]
 
@@ -93,7 +96,11 @@ export const Projects = () => {
           >
 
             <div className="project-number">
+<<<<<<< HEAD
               {String(project.id).padStart(2, '0')}
+=======
+              0{project.id}
+>>>>>>> 86c2fb366a3ba843272b844017abbcfd6b38c1f0
             </div>
 
             <h2>
